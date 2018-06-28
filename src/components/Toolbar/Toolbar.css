@@ -1,0 +1,35 @@
+#toolbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    padding: 1rem 2rem;
+}
+
+#toolbar .logo {
+    width: 42px;
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+    #toolbar .logo {
+        width: 30px;
+    }
+}
+
+#toolbar .btn-rsvp {
+    padding: .4rem 2rem;
+}
+
+@media (max-width: 768px) {
+    #toolbar .btn-rsvp {
+        padding: .2rem 1rem;
+    }
+}
