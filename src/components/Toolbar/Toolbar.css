@@ -3,12 +3,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1030;
     padding: 1rem 2rem;
 }
+
 @media(max-width: 768px) {
     #toolbar {
         padding: 0.5rem 1rem;

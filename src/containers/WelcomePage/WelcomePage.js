@@ -1,5 +1,7 @@
 import React from 'react'
+import Aux from './../../hoc/Aux/Aux'
 import Welcome from './Welcome/Welcome'
+import SaveTheDate from './SaveTheDate/SaveTheDate'
 
 class WelcomePage extends React.Component {
     state = {
@@ -9,7 +11,10 @@ class WelcomePage extends React.Component {
 
     render() {
         return (
-            <Welcome toolbarHeight={this.props.toolbarHeight} />
+            <Aux>
+                <Welcome toolbarHeight={this.props.toolbarHeight} />
+                <SaveTheDate toolbarHeight={this.props.toolbarHeight} />
+            </Aux>
         )
     }
 }

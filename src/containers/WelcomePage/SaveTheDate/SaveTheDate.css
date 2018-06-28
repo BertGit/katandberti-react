@@ -1,0 +1,70 @@
+#save-the-date {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('/img/dordogne.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#save-the-date .container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#save-the-date .white-text-with-shadow {
+    color: white;
+    text-shadow: 1px 1px 4px #777;
+}
+
+#save-the-date h1 {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 6rem;
+}
+
+#save-the-date h2 {
+    color: white;
+    font-size: 2.2rem;
+}
+
+@media(max-width: 768px) {
+    #save-the-date h1 {
+        font-size: 5rem;
+    }
+    #save-the-date h2 {
+        font-size: 2rem;
+    }
+}
+
+#kb-circle-row {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#kb-circle {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    background: rgba(255, 200, 73, 0.9);
+    border-radius: 50%;
+    text-align: center;
+    height: 240px;
+    width: 240px;
+    position: relative;
+    transition: 0.5s ease-in-out;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#kb-circle>span:first-child {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 3rem;
+    line-height: 0.8;
+}
