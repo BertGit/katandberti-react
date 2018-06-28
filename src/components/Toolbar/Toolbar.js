@@ -4,15 +4,23 @@ import './Toolbar.css'
 import '../../css/Buttons.css'
 import logo from '../../assets/images/logoKB.png'
 
-const toolbar = (props) => {
-    return (
-        <nav id='toolbar'>
-            <img src={logo} className='logo' />
-            <a href='#rsvp'>
-                <button className='btn btn-dark btn-rsvp'>r.s.v.p</button>
-            </a>
-        </nav>
-    )
+class Toolbar extends React.PureComponent {
+    toolbarRef = React.createRef();
+
+    componentDidMount = () => {
+        this.props.toolbarRendered(this.toolbarRef.current.clientHeight)
+    }
+
+    render() {
+        return (
+            <nav ref={this.toolbarRef} id='toolbar' >
+                <img src={logo} className='logo' />
+                <a href='#rsvp'>
+                    <button className='btn btn-dark btn-rsvp'>r.s.v.p</button>
+                </a>
+            </nav>
+        )
+    }
 }
 
-export default toolbar
+export default Toolbar

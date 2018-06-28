@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Welcome from './Welcome/Welcome'
 
 class WelcomePage extends React.Component {
     state = {
@@ -7,7 +8,9 @@ class WelcomePage extends React.Component {
     }
 
     render() {
-        return null
+        return (
+            <Welcome toolbarHeight={this.props.toolbarHeight} />
+        )
     }
 }
 

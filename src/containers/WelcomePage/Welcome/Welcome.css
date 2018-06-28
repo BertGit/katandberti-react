@@ -1,0 +1,44 @@
+#personalised {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    margin-top: 20px;
+}
+
+#rings {
+    width: 80px;
+}
+
+@media (max-width: 768px) {
+    #rings {
+        width: 60px;
+    }
+}
+
+#guest-name {
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 5rem;
+}
+
+@media(max-width: 768px) {
+    #guest-name {
+        font-size: 3rem;
+    }
+}
+
+#guest-intro {
+    font-size: 1.5rem;
+}
+
+@media(max-width: 768px) {
+    font-size: 1.2rem;
+}
+
+#angle-down {
+    font-size: 3rem;
+    padding-top: 2rem;
+    color: #585858;
+}

@@ -9,6 +9,11 @@
     z-index: 1030;
     padding: 1rem 2rem;
 }
+@media(max-width: 768px) {
+    #toolbar {
+        padding: 0.5rem 1rem;
+    }
+}
 
 #toolbar .logo {
     width: 42px;
