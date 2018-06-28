@@ -29,3 +29,13 @@ button {
     background-color: #343a40;
     border-color: #343a40;
 }
+.btn-dark:hover {
+    color: #fff;
+    background-color: #23272b;
+    border-color: #1d2124;
+  }
+  
+.btn-dark:focus, .btn-dark.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+}
