@@ -8,7 +8,7 @@ import './Welcome.css'
 
 import rings from '../../../assets/images/rings.png'
 
-class Welcome extends React.PureComponent {
+class Welcome extends React.Component {
     state = {
         butterflyTarget: {
             x: 0, y: 0
@@ -17,7 +17,13 @@ class Welcome extends React.PureComponent {
     angleDown = React.createRef()
 
     componentDidMount = () => {
-        console.log(this.angleDown)
+        this.updateButterflyTarget()
+        window.addEventListener("resize", this.updateButterflyTarget)
+    }
+
+    updateButterflyTarget = () => {
+        console.log("Updating")
+        console.log(this.angleDown.current.offsetLeft)
         this.setState({
             butterflyTarget: {
                 x: this.angleDown.current.offsetLeft,

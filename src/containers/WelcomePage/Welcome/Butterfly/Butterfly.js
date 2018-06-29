@@ -10,11 +10,13 @@ class Butterfly extends React.Component {
     prevProgress = 0.0
     duration = 2000
     waitTime = 1000
+    butterflyStarted = false
 
     componentDidMount() {
         window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame
         setTimeout(() => {
             console.log("Starting the butterfly")
+            this.butterflyStarted = true
             requestAnimationFrame(this.step)
         }, this.waitTime)
     }
@@ -28,20 +30,22 @@ class Butterfly extends React.Component {
         var yStart = yTarget - Math.cos(Math.PI) * verticalDist
         if (this.start === null) this.start = timestamp
         var progress = Math.min((timestamp - this.start) / this.duration, 1.0)
-        if (progress === 1.0) {
-            this.butterfly.current.style.left = xTarget
-            this.butterfly.current.style.top = yTarget
-        }
-        if (progress >= this.prevProgress + 0.04) {
+        if (progress === 1.0 || progress >= this.prevProgress + 0.04) {
             this.prevProgress = progress
             this.butterfly.current.style.left = (xStart + progress * (xTarget - xStart)).toString() + 'px'
             this.butterfly.current.style.top = (yStart + Math.cos(progress * Math.PI) * verticalDist).toString() + 'px'
-            this.butterfly.current.style.transform = 'rotate(' + (Math.random() * 30 - 20 + 50 * (1 - progress)) + 'deg)'
+            if (progress < 1.0) {
+                this.butterfly.current.style.transform = 'rotate(' + (Math.random() * 30 - 20 + 50 * (1 - progress)) + 'deg)'
+            }
         }
-        requestAnimationFrame(this.step)
+        if (progress < 1.0) {
+            requestAnimationFrame(this.step)
+        }
     }
 
     render() {
+        console.log("Rendering")
+        if (this.butterflyStarted) requestAnimationFrame(this.step)
         return (
             <div ref={this.butterfly} id='butterfly' >
                 <img src={butterflygif} />
