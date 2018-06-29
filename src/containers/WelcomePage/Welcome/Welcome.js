@@ -9,6 +9,23 @@ import './Welcome.css'
 import rings from '../../../assets/images/rings.png'
 
 class Welcome extends React.PureComponent {
+    state = {
+        butterflyTarget: {
+            x: 0, y: 0
+        }
+    }
+    angleDown = React.createRef()
+
+    componentDidMount = () => {
+        console.log(this.angleDown)
+        this.setState({
+            butterflyTarget: {
+                x: this.angleDown.current.offsetLeft,
+                y: this.angleDown.current.offsetTop
+            }
+        })
+    }
+
     render() {
         return (
             <Aux>
@@ -22,11 +39,11 @@ class Welcome extends React.PureComponent {
                         We'd love for you to celebrate with us on our special day
                     </h2>
                     <a href='#marriage'>
-                        <i id='angle-down' className='fa fa-chevron-down' />
+                        <i ref={this.angleDown} id='angle-down' className='fa fa-chevron-down' />
                     </a>
                 </div>
                 <div style={{ height: `${this.props.toolbarHeight}px` }}></div>
-                <Butterfly />
+                <Butterfly target={this.state.butterflyTarget} />
             </Aux>
         )
     }

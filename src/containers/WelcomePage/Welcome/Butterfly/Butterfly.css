@@ -1,0 +1,14 @@
+#butterfly {
+    position: absolute;
+    left: -100%;
+}
+
+#butterfly>img {
+    width: 5rem;
+}
+
+@media (max-width: 768px) {
+    #butterfly>img {
+        width: 3rem;
+    }
+}
