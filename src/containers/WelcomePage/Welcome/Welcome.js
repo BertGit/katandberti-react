@@ -22,8 +22,6 @@ class Welcome extends React.Component {
     }
 
     updateButterflyTarget = () => {
-        console.log("Updating")
-        console.log(this.angleDown.current.offsetLeft)
         this.setState({
             butterflyTarget: {
                 x: this.angleDown.current.offsetLeft,

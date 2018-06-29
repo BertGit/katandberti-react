@@ -1,0 +1,7 @@
+.hidden-load {
+    visibility: hidden
+}
+
+.hidden-load.animated {
+    visibility: visible
+}

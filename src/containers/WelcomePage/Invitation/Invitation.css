@@ -1,0 +1,40 @@
+#invitation {
+    position: relative;
+    background-color: #ffc849;
+}
+
+#invitation p {
+    font-size: 1.5rem;
+}
+
+#invitation .container {
+    position: relative;
+    text-align: center;
+}
+
+#ornaments img {
+    position: absolute;
+    opacity: 0.5;
+}
+
+#ornaments .top-right {
+    top: 0;
+    right: 0;
+    height: 15rem;
+}
+
+#ornaments .bottom-left {
+    bottom: 0;
+    left: 0;
+    height: 20rem;
+    transform: rotate(180deg);
+}
+
+@media(max-width: 768px) {
+    #ornaments .top-right {
+        height: 10rem;
+    }
+    #ornaments .bottom-left {
+        height: 15rem;
+    }
+}
