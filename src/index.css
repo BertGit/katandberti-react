@@ -22,6 +22,11 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
 }
 
+a {
+  color: #3c3b3b;
+  text-decoration: underline;
+}
+
 *, ::after, ::before {
   box-sizing: border-box;
 }

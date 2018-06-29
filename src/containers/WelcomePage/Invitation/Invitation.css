@@ -1,5 +1,6 @@
 #invitation {
     position: relative;
+    text-align: center;
     background-color: #ffc849;
 }
 
@@ -9,7 +10,6 @@
 
 #invitation .container {
     position: relative;
-    text-align: center;
 }
 
 #ornaments img {
@@ -37,4 +37,13 @@
     #ornaments .bottom-left {
         height: 15rem;
     }
+}
+
+#bergerac-map img {
+    width: 20%;
+    min-width: 200px;
+}
+
+#contact {
+    /* padding-bottom: 3rem; */
 }
