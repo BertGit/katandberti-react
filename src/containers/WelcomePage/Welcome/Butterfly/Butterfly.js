@@ -1,5 +1,4 @@
 import React from 'react'
-import { Motion, spring } from 'react-motion';
 
 import './Butterfly.css'
 import butterflygif from '../../../../assets/images/butterfly.gif'
@@ -48,7 +47,7 @@ class Butterfly extends React.Component {
         if (this.butterflyStarted) requestAnimationFrame(this.step)
         return (
             <div ref={this.butterfly} id='butterfly' >
-                <img src={butterflygif} />
+                <img src={butterflygif} alt='' />
             </div >
         )
     }

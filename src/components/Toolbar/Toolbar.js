@@ -14,10 +14,12 @@ class Toolbar extends React.PureComponent {
     render() {
         return (
             <nav ref={this.toolbarRef} id='toolbar' >
-                <img src={logo} className='logo' />
-                <a href='#rsvp'>
-                    <button className='btn btn-dark btn-rsvp'>r.s.v.p</button>
-                </a>
+                <img src={logo} className='logo' alt='' />
+                {this.props.showRsvp ?
+                    <a href='#rsvp'>
+                        <button className='btn btn-dark btn-rsvp'>r.s.v.p</button>
+                    </a>
+                    : null}
             </nav>
         )
     }

@@ -34,10 +34,10 @@ class Welcome extends React.Component {
         return (
             <Aux>
                 <div id='personalised' className='container' style={{ minHeight: `calc(100vh - 2*${this.props.toolbarHeight}px` }}>
-                    <img id='rings' src={rings} />
+                    <img id='rings' src={rings} alt='' />
                     <div className='padding-vertical-2' />
-                    <h1 id='guest-name'>
-                        {this.props.names ? this.props.names : 'Dear Guest'}
+                    <h1 id='guest-name' className={!!this.props.names ? 'animated fadeIn' : 'hidden-load'}>
+                        {!!this.props.names ? this.props.names.join(' & ') : '...'}
                     </h1>
                     <h2 id='guest-intro'>
                         We'd love for you to celebrate with us on our special day

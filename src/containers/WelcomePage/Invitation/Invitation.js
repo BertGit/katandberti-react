@@ -15,8 +15,8 @@ class Invitation extends React.PureComponent {
         return (
             <div id='invitation'>
                 <div id='ornaments'>
-                    <img className='top-right' src={ornament} />
-                    <img className='bottom-left' src={ornament} />
+                    <img className='top-right' src={ornament} alt='' />
+                    <img className='bottom-left' src={ornament} alt='' />
                 </div>
                 <div className='container'>
                     <div className='padding-vertical-5' />
@@ -24,12 +24,10 @@ class Invitation extends React.PureComponent {
 
                     <WeddingDate />
 
-                    <div>
-                        <p>Lalinde, Dordogne-Region, France</p>
-                    </div>
+                    <p>Lalinde, Dordogne-Region, France</p>
                     <div id='bergerac-map' className='padding-vertical-2'>
                         <a href='https://goo.gl/maps/nBwZWof8cdn' target='blank'>
-                            <img src={bergeracMap} />
+                            <img src={bergeracMap} alt='' />
                         </a>
                     </div>
 
@@ -39,7 +37,7 @@ class Invitation extends React.PureComponent {
                         <a href='mailto:kathryne.leigh@gmail.com,bertram.jeremy.mueller@gmail.com?Subject=Wedding Questions' target='_top'>
                             <i className='fa fa-envelope'></i>
                             <br />Get in touch with us if you have any questions
-                    </a>
+                        </a>
                     </p>
                     <div className='padding-bottom-5' />
                 </div>
