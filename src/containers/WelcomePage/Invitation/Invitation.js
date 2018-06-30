@@ -13,6 +13,7 @@ import '../../../css/Spacers.css'
 
 class Invitation extends React.PureComponent {
     render() {
+        console.log("Invitation", this.props)
         return (
             <div id='invitation'>
                 <div id='ornaments'>
@@ -32,9 +33,8 @@ class Invitation extends React.PureComponent {
                         </a>
                     </div>
 
-                    <ScrollableAnchor id={'a-rsvp'}>
-                        <Rsvp />
-                    </ScrollableAnchor>
+                    <ScrollableAnchor id={'a-rsvp'}><div /></ScrollableAnchor>
+                    <Rsvp rsvp={this.props.rsvp} />
 
                     <p id='contact'>
                         <a href='mailto:kathryne.leigh@gmail.com,bertram.jeremy.mueller@gmail.com?Subject=Wedding Questions' target='_top'>

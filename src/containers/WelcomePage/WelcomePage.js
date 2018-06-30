@@ -1,6 +1,5 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-import { configureAnchors } from 'react-scrollable-anchor'
 
 import Aux from './../../hoc/Aux/Aux'
 import Welcome from './Welcome/Welcome'
@@ -20,9 +19,10 @@ class WelcomePage extends React.Component {
             const guestsRef = firebase.database().ref('guests/' + this.props.userId)
             guestsRef.once('value', (data) => {
                 if (data.val()) {
+                    console.log('Received data from server', data.val())
                     this.setState({
                         userNames: data.val().names,
-                        rsvp: data.val().rsvp
+                        rsvp: data.val().rsvp || "NA"
                     })
                 } else {
                     this.setState({
@@ -31,10 +31,6 @@ class WelcomePage extends React.Component {
                 }
             })
         }
-    }
-
-    componentWillReceiveProps = (nextProps) => {
-        configureAnchors({ offset: -nextProps.toolbarHeight })
     }
 
     render() {

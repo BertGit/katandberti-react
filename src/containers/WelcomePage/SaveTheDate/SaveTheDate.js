@@ -1,5 +1,6 @@
 import React from 'react'
 import ScrollableAnchor from 'react-scrollable-anchor'
+import Aux from '../../../hoc/Aux/Aux'
 
 import Waypoint from 'react-waypoint'
 import '../../../css/Container.css'
@@ -11,7 +12,8 @@ class SaveTheDate extends React.PureComponent {
 
     render() {
         return (
-            <ScrollableAnchor id={'a-save-the-date'}>
+            <Aux>
+                <ScrollableAnchor id={'a-save-the-date'}><div /></ScrollableAnchor>
                 <div id='save-the-date' style={{ minHeight: `calc(100vh - ${this.props.toolbarHeight}px` }} >
                     <div className='container'>
                         <div className='padding-vertical-5' />
@@ -31,7 +33,7 @@ class SaveTheDate extends React.PureComponent {
                         <div className='padding-vertical-5' />
                     </div>
                 </div >
-            </ScrollableAnchor>
+            </Aux>
         )
     }
 }

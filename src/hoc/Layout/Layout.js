@@ -1,4 +1,5 @@
 import React from 'react'
+import { configureAnchors } from 'react-scrollable-anchor'
 
 import Aux from '../Aux/Aux'
 import Toolbar from '../../components/Toolbar/Toolbar'
@@ -11,6 +12,7 @@ class Layout extends React.Component {
     }
 
     toolbarSizeChange = (newHeight) => {
+        configureAnchors({ offset: -newHeight, scrollDuration: 1000 })
         this.setState({ toolbarHeight: newHeight })
     }
 

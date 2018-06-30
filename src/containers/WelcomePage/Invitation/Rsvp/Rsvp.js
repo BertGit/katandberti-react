@@ -8,6 +8,8 @@ class Rsvp extends React.Component {
             return (<p> Great that you think you can make it. More details to come soon. </p>)
         } else if (this.props.rsvp === 'DECLINED') {
             return (<p>Sorry you can't make it to the event. Thanks for letting us know.</p>)
+        } else if (this.props.rsvp === 'NA') {
+            return <p>bla</p>
         } else {
             return null
         }

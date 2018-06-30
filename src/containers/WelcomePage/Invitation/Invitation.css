@@ -43,3 +43,8 @@
     width: 20%;
     min-width: 200px;
 }
+
+#contact {
+    padding-top: 3rem;
+    margin: 0;
+}
