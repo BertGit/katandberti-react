@@ -11,6 +11,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
+    "react-scrollable-anchor": "^0.6.1",
     "react-waypoint": "^8.0.2"
   },
   "scripts": {

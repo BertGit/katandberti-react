@@ -1,4 +1,7 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
+import { configureAnchors } from 'react-scrollable-anchor'
+
 import Aux from './../../hoc/Aux/Aux'
 import Welcome from './Welcome/Welcome'
 import SaveTheDate from './SaveTheDate/SaveTheDate'
@@ -7,6 +10,7 @@ import firebase from '../../firebase'
 
 class WelcomePage extends React.Component {
     state = {
+        validUser: true,
         userNames: null,
         rsvp: null
     }
@@ -15,22 +19,36 @@ class WelcomePage extends React.Component {
         if (!!this.props.userId) {
             const guestsRef = firebase.database().ref('guests/' + this.props.userId)
             guestsRef.once('value', (data) => {
-                this.setState({
-                    userNames: data.val().names,
-                    rsvp: data.val().rsvp || null
-                })
+                if (data.val()) {
+                    this.setState({
+                        userNames: data.val().names,
+                        rsvp: data.val().rsvp
+                    })
+                } else {
+                    this.setState({
+                        validUser: false
+                    })
+                }
             })
         }
     }
 
+    componentWillReceiveProps = (nextProps) => {
+        configureAnchors({ offset: -nextProps.toolbarHeight })
+    }
+
     render() {
-        return (
-            <Aux>
-                <Welcome toolbarHeight={this.props.toolbarHeight} names={!!this.props.userId ? this.state.userNames : ['Dear Guest']} rsvp={this.state.rsvp} />
-                <SaveTheDate toolbarHeight={this.props.toolbarHeight} />
-                <Invitation userId={this.props.userId} rsvp={this.state.rsvp} />
-            </Aux>
-        )
+        if (this.state.validUser) {
+            return (
+                < Aux >
+                    <Welcome toolbarHeight={this.props.toolbarHeight} names={!!this.props.userId ? this.state.userNames : ['Dear Guest']} rsvp={this.state.rsvp} />
+                    <SaveTheDate toolbarHeight={this.props.toolbarHeight} />
+                    <Invitation userId={this.props.userId} rsvp={this.state.rsvp} />
+                </Aux >
+            )
+        } else {
+            return <Redirect to='/' />
+        }
     }
 }
 

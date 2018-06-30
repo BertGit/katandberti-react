@@ -42,7 +42,7 @@ class Welcome extends React.Component {
                     <h2 id='guest-intro'>
                         We'd love for you to celebrate with us on our special day
                     </h2>
-                    <a href='#marriage'>
+                    <a href='#a-save-the-date'>
                         <i ref={this.angleDown} id='angle-down' className='fa fa-chevron-down' />
                     </a>
                 </div>

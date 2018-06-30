@@ -16,7 +16,7 @@ class Toolbar extends React.PureComponent {
             <nav ref={this.toolbarRef} id='toolbar' >
                 <img src={logo} className='logo' alt='' />
                 {this.props.showRsvp ?
-                    <a href='#rsvp'>
+                    <a href='#a-rsvp'>
                         <button className='btn btn-dark btn-rsvp'>r.s.v.p</button>
                     </a>
                     : null}

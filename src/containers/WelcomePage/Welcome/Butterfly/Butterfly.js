@@ -6,6 +6,7 @@ import butterflygif from '../../../../assets/images/butterfly.gif'
 class Butterfly extends React.Component {
     butterfly = React.createRef()
     start = null
+    interrupt = false
     prevProgress = 0.0
     duration = 2000
     waitTime = 1000
@@ -20,7 +21,12 @@ class Butterfly extends React.Component {
         }, this.waitTime)
     }
 
+    componentWillUnmount() {
+        this.interrupt = true
+    }
+
     step = (timestamp) => {
+        if (this.interrupt) return
         // Refresh values every time in case user resizes browser window
         var xTarget = this.props.target.x - this.butterfly.current.clientWidth * 1.5
         var yTarget = this.props.target.y
