@@ -31,11 +31,13 @@ class Rsvp extends React.Component {
         }
     }
 
-    comment = (event, val) => {
-        this.setState({ loading: true })
-        firebase.database().ref('guests/' + this.props.userId + '/comment').set(
-            this.textarea.current.value
-        ).then(this.setState({ rsvpState: 'COMMENTED', loading: false }))
+    comment = () => {
+        if (this.textarea.current.value !== "") {
+            this.setState({ loading: true })
+            firebase.database().ref('guests/' + this.props.userId + '/comment').set(
+                this.textarea.current.value
+            ).then(this.setState({ rsvpState: 'COMMENTED', loading: false }))
+        }
     }
 
     render() {
