@@ -34,7 +34,7 @@ class Invitation extends React.PureComponent {
                     </div>
 
                     <ScrollableAnchor id={'a-rsvp'}><div /></ScrollableAnchor>
-                    <Rsvp rsvp={this.props.rsvp} />
+                    <Rsvp userId={this.props.userId} names={this.props.names} rsvp={this.props.rsvp} />
 
                     <p id='contact'>
                         <a href='mailto:kathryne.leigh@gmail.com,bertram.jeremy.mueller@gmail.com?Subject=Wedding Questions' target='_top'>

@@ -39,7 +39,7 @@ class WelcomePage extends React.Component {
                 < Aux >
                     <Welcome toolbarHeight={this.props.toolbarHeight} names={!!this.props.userId ? this.state.userNames : ['Dear Guest']} rsvp={this.state.rsvp} />
                     <SaveTheDate toolbarHeight={this.props.toolbarHeight} />
-                    <Invitation userId={this.props.userId} rsvp={this.state.rsvp} />
+                    <Invitation userId={this.props.userId} names={this.props.names} rsvp={this.state.rsvp} />
                 </Aux >
             )
         } else {
