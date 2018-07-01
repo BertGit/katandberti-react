@@ -15,17 +15,25 @@ class Welcome extends React.Component {
         }
     }
     angleDown = React.createRef()
+    butterflyOffset = 30
 
     componentDidMount = () => {
         this.updateButterflyTarget()
         window.addEventListener("resize", this.updateButterflyTarget)
     }
 
+    componentDidUpdate() {
+        if (this.state.butterflyTarget.y != this.angleDown.current.offsetTop + this.butterflyOffset) {
+            setTimeout(this.updateButterflyTarget, 100)
+        }
+    }
+
     updateButterflyTarget = () => {
+        console.log('Butterfly top offset', this.angleDown.current.offsetTop)
         this.setState({
             butterflyTarget: {
                 x: this.angleDown.current.offsetLeft,
-                y: this.angleDown.current.offsetTop
+                y: this.angleDown.current.offsetTop + this.butterflyOffset
             }
         })
     }
