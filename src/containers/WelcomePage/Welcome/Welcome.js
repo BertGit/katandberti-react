@@ -23,7 +23,7 @@ class Welcome extends React.Component {
     }
 
     componentDidUpdate() {
-        if (this.state.butterflyTarget.y != this.angleDown.current.offsetTop + this.butterflyOffset) {
+        if (this.state.butterflyTarget.y !== this.angleDown.current.offsetTop + this.butterflyOffset) {
             setTimeout(this.updateButterflyTarget, 100)
         }
     }

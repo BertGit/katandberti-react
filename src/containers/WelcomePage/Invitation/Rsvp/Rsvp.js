@@ -4,7 +4,7 @@ import Aux from '../../../../hoc/Aux/Aux'
 import Spinner from '../../../../components/Spinner/Spinner'
 
 import firebase from '../../../../firebase'
-import ScrollableAnchor, { goToAnchor, goToTop } from 'react-scrollable-anchor'
+import ScrollableAnchor, { goToAnchor } from 'react-scrollable-anchor'
 
 import './Rsvp.css'
 import '../../../../css/animate.css'
