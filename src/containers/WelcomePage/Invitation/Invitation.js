@@ -43,6 +43,7 @@ class Invitation extends React.PureComponent {
                         </a>
                     </p>
                     <div className='padding-bottom-5' />
+                    <div className='padding-bottom-5' />
                 </div>
             </div>
         )
