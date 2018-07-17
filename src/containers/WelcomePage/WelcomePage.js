@@ -1,11 +1,20 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
+import LocalizedStrings from 'react-localization'
 
 import Aux from './../../hoc/Aux/Aux'
 import Welcome from './Welcome/Welcome'
 import SaveTheDate from './SaveTheDate/SaveTheDate'
 import Invitation from './Invitation/Invitation'
 import firebase from '../../firebase'
+
+let strings = new LocalizedStrings({
+    en: {
+        defaultGuest: "Dear Guest"
+    }, de: {
+        defaultGuest: "Lieber Gast"
+    }
+})
 
 class WelcomePage extends React.Component {
     state = {
@@ -37,7 +46,7 @@ class WelcomePage extends React.Component {
         if (this.state.validUser) {
             return (
                 < Aux >
-                    <Welcome toolbarHeight={this.props.toolbarHeight} names={!!this.props.userId ? this.state.userNames : ['Dear Guest']} rsvp={this.state.rsvp} />
+                    <Welcome toolbarHeight={this.props.toolbarHeight} names={!!this.props.userId ? this.state.userNames : [strings.defaultGuest]} rsvp={this.state.rsvp} />
                     <SaveTheDate toolbarHeight={this.props.toolbarHeight} />
                     <Invitation userId={this.props.userId} names={this.props.names} rsvp={this.state.rsvp} />
                 </Aux >

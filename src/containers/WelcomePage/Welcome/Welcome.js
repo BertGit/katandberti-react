@@ -1,4 +1,5 @@
 import React from 'react'
+import LocalizedStrings from 'react-localization'
 
 import Aux from '../../../hoc/Aux/Aux'
 import Butterfly from './Butterfly/Butterfly'
@@ -7,6 +8,16 @@ import '../../../css/Spacers.css'
 import './Welcome.css'
 
 import rings from '../../../assets/images/rings.png'
+
+let strings = new LocalizedStrings({
+    en: {
+        intro: "We'd love for you to celebrate with us on our special day",
+        introPlural: "We'd love for you to celebrate with us on our special day"
+    }, de: {
+        intro: "Wir würden uns sehr freuen, mit Dir unseren besonderen Tag zu feiern",
+        introPlural: "Wir würden uns sehr freuen, mit Euch unseren besonderen Tag zu feiern"
+    }
+})
 
 class Welcome extends React.Component {
     state = {
@@ -48,7 +59,7 @@ class Welcome extends React.Component {
                         {!!this.props.names ? this.props.names.join(' & ') : '...'}
                     </h1>
                     <h2 id='guest-intro'>
-                        We'd love for you to celebrate with us on our special day
+                        {!!this.props.names && this.props.names.length > 1 ? strings.introPlural : strings.intro}
                     </h2>
                     <a href='#a-save-the-date'>
                         <i ref={this.angleDown} id='angle-down' className='fa fa-chevron-down' />
