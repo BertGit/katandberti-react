@@ -1,10 +1,22 @@
 import React from 'react'
 
+import LocalizedStrings from 'react-localization'
+
 import Waypoint from 'react-waypoint'
 
 import './WeddingDate.css'
 import '../../../../css/AnimationHelpers.css'
 import '../../../../css/animate.css'
+
+let strings = new LocalizedStrings({
+    en: {
+        june: "JUNI",
+        sat: "SAT"
+    }, de: {
+        june: "JUNI",
+        sat: "SA"
+    }
+})
 
 class WeddingDate extends React.PureComponent {
     state = {
@@ -15,10 +27,10 @@ class WeddingDate extends React.PureComponent {
             <div id='wedding-date' className={this.state.animated ? 'animated flipInX' : 'hidden-load'}>
                 <div id='wedding-date-desktop' className='wedding-date-specific'>
                     <div className='padding-horizontal-4 date-large'>
-                        <span>JUNE</span>
+                        <span>{strings.june}</span>
                     </div>
                     <div id='date-stacked' className='padding-horizontal-4'>
-                        <span>SAT<br />1</span>
+                        <span>{strings.sat}<br />1</span>
                     </div>
                     <div className='padding-horizontal-4 date-large'>
                         <span>2019</span>

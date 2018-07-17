@@ -48,6 +48,8 @@
     height: 200px;
     border-radius: 5px;
     resize: vertical;
+    font-family: 'Maven Pro';
+    font-size: 1rem;
 }
 
 #comment-box button {
