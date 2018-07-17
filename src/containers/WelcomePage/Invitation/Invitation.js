@@ -52,7 +52,7 @@ class Invitation extends React.PureComponent {
                     <Rsvp userId={this.props.userId} names={this.props.names} plural={this.props.plural} rsvp={this.props.rsvp} />
 
                     <p id='contact'>
-                        <a href='mailto:kathryne.leigh@gmail.com,bertram.jeremy.mueller@gmail.com?Subject=Wedding Questions' target='_top'>
+                        <a href='mailto:bertiandkat@gmail.com?Subject=Wedding Questions' target='_top'>
                             <i className='fa fa-envelope'></i>
                             <br />{strings.getInTouch}
                         </a>
