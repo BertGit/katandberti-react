@@ -1,6 +1,8 @@
 #wedding-date span {
     display: inline-block;
     color: white;
+    font-family: 'Amatic SC';
+    font-weight: 700;
 }
 
 .wedding-date-specific {
@@ -29,7 +31,7 @@
 }
 
 .date-large span {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 #date-stacked {
@@ -46,7 +48,7 @@
 }
 
 #date-stacked span {
-    font-size: 2.5rem;
+    font-size: 3rem;
     line-height: 1;
     margin-bottom: 0;
 }
@@ -56,15 +58,11 @@
         padding: 0 1rem
     }
     .date-large span {
-        font-size: 2.5rem;
         margin-bottom: 0;
         line-height: 1;
     }
     #date-stacked {
         border-left: 0 !important;
         align-self: center!important;
-    }
-    #date-stacked span {
-        font-size: 2rem;
     }
 }

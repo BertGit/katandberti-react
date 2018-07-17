@@ -37,7 +37,7 @@ class Invitation extends React.PureComponent {
                 </div>
                 <div className='container'>
                     <div className='padding-vertical-5' />
-                    <p>{!!this.props.names && this.props.names.length > 1 ? strings.invitedPlural : strings.invited}</p>
+                    <p>{this.props.plural ? strings.invitedPlural : strings.invited}</p>
 
                     <WeddingDate />
 

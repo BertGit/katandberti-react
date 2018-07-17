@@ -44,11 +44,21 @@ class WelcomePage extends React.Component {
 
     render() {
         if (this.state.validUser) {
+            let plural = !!this.state.userNames && (this.state.userNames.length > 1 || this.state.userNames[0].toLowerCase().includes("family"))
             return (
                 < Aux >
-                    <Welcome toolbarHeight={this.props.toolbarHeight} names={!!this.props.userId ? this.state.userNames : [strings.defaultGuest]} rsvp={this.state.rsvp} />
-                    <SaveTheDate toolbarHeight={this.props.toolbarHeight} />
-                    <Invitation userId={this.props.userId} names={this.props.names} rsvp={this.state.rsvp} />
+                    <Welcome
+                        toolbarHeight={this.props.toolbarHeight}
+                        names={!!this.props.userId ? this.state.userNames : [strings.defaultGuest]}
+                        plural={plural}
+                        rsvp={this.state.rsvp} />
+                    <SaveTheDate
+                        toolbarHeight={this.props.toolbarHeight} />
+                    <Invitation
+                        userId={this.props.userId}
+                        names={this.props.names}
+                        plural={plural}
+                        rsvp={this.state.rsvp} />
                 </Aux >
             )
         } else {

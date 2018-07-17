@@ -12,11 +12,11 @@ import './SaveTheDate.css'
 let strings = new LocalizedStrings({
     en: {
         saveTheDate: "Save the Date",
-        gettingMarried: "We're getting married",
+        gettingMarried: "We're getting married!",
         date: "1 June 2019"
     }, de: {
         saveTheDate: "Save the Date",
-        gettingMarried: "Wir heiraten",
+        gettingMarried: "Wir heiraten!",
         date: "1 Juni 2019"
     }
 })

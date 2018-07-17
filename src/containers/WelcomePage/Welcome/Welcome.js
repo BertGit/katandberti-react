@@ -50,16 +50,25 @@ class Welcome extends React.Component {
     }
 
     render() {
+        let title = '...'
+        if (!!this.props.names) {
+            if (this.props.names.length >= 2) {
+                title = [this.props.names.slice(0, -1).join(', '), this.props.names.slice(-1)].join(' & ')
+            } else {
+                title = this.props.names.join(' & ')
+            }
+        }
         return (
             <Aux>
                 <div id='personalised' className='container' style={{ minHeight: `calc(100vh - 2*${this.props.toolbarHeight}px` }}>
                     <img id='rings' src={rings} alt='' />
                     <div className='padding-vertical-2' />
                     <h1 id='guest-name' className={!!this.props.names ? 'animated fadeIn' : 'hidden-load'}>
-                        {!!this.props.names ? this.props.names.join(' & ') : '...'}
+                        {title}
                     </h1>
+                    <div className='padding-vertical-2' />
                     <h2 id='guest-intro'>
-                        {!!this.props.names && this.props.names.length > 1 ? strings.introPlural : strings.intro}
+                        {this.props.plural ? strings.introPlural : strings.intro}
                     </h2>
                     <a href='#a-save-the-date'>
                         <i ref={this.angleDown} id='angle-down' className='fa fa-chevron-down' />
