@@ -38,11 +38,11 @@ class WeddingDate extends React.PureComponent {
                 </div>
                 <div id='wedding-date-mobile' className='wedding-date-specific'>
                     <div id='date-stacked'>
-                        <span>SAT<br />1</span>
+                        <span>{strings.sat}<br />1</span>
                     </div>
                     <div id='stacked-mobile'>
                         <div className='date-large'>
-                            <span>JUNE</span>
+                            <span>{strings.june}</span>
                         </div>
                         <div className='date-large'>
                             <span>2019</span>
