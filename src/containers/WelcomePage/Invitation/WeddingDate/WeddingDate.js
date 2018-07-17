@@ -10,7 +10,7 @@ import '../../../../css/animate.css'
 
 let strings = new LocalizedStrings({
     en: {
-        june: "JUNI",
+        june: "JUNE",
         sat: "SAT"
     }, de: {
         june: "JUNI",
