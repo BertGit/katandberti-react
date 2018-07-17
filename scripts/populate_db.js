@@ -31,12 +31,13 @@ function closeOnCompletion() {
 inputStream
     .pipe(CsvReadableStream({ parseNumbers: true, parseBooleans: true, trim: true }))
     .on('data', function (row) {
-        let [link, names, emails] = row
+        let [link, names, emails, lang] = row
         names = names.split(',').map(n => n.trim()).filter(n => n !== "")
         emails = emails.split(',').map(e => e.trim()).filter(e => e !== "")
-        execCounter += 2
+        execCounter += 3
         firebase.database().ref('guests/' + link.trim() + '/names').set(names).then(closeOnCompletion)
         firebase.database().ref('guests/' + link.trim() + '/emails').set(emails).then(closeOnCompletion)
+        firebase.database().ref('guests/' + link.trim() + '/lang').set(lang.trim()).then(closeOnCompletion)
     })
     .on('end', function (data) {
         console.log('Complete');

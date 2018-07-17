@@ -39,6 +39,7 @@ class WelcomePage extends React.Component {
                     })
                 }
             })
+            firebase.database().ref('guests/' + this.props.userId + '/visited').set("TRUE")
         }
     }
 
