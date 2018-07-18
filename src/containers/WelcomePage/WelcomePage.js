@@ -29,6 +29,7 @@ class WelcomePage extends React.Component {
             guestsRef.once('value', (data) => {
                 if (data.val()) {
                     console.log('Received data from server', data.val())
+                    firebase.database().ref('guests/' + this.props.userId + '/visited').set("TRUE")
                     this.setState({
                         userNames: data.val().names,
                         rsvp: data.val().rsvp || "NA"
@@ -39,7 +40,6 @@ class WelcomePage extends React.Component {
                     })
                 }
             })
-            firebase.database().ref('guests/' + this.props.userId + '/visited').set("TRUE")
         }
     }
 
