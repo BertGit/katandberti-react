@@ -8,9 +8,9 @@ import logo from '../../assets/images/logoKB.png'
 
 let strings = new LocalizedStrings({
     en: {
-        rsvp: "r.s.v.p"
+        rsvp: "Event Details"
     }, de: {
-        rsvp: "Rückmeldung"
+        rsvp: "Event Details"
     }
 })
 
@@ -26,11 +26,9 @@ class Toolbar extends React.PureComponent {
         return (
             <nav ref={this.toolbarRef} id='toolbar' >
                 <img src={logo} className='logo' alt='' />
-                {this.props.showRsvp ?
-                    <a href='#a-rsvp'>
-                        <button className='btn btn-dark btn-rsvp'>{strings.rsvp}</button>
-                    </a>
-                    : null}
+                <a href='#a-event-details'>
+                    <button className='btn btn-dark btn-rsvp'>{strings.rsvp}</button>
+                </a>
             </nav>
         )
     }
