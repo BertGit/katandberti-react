@@ -9,9 +9,10 @@ const venue = () => {
             <h2>The venue</h2>
             <p>
                 <em>Les Magnolias</em>
-                The setting for our wedding will be at this venue, which is based right next to the town of Lalinde, the heart of town only 10 minute walk away.
-                Though we’d love to have you all here, there is only accomodation on site for the wedding party, and if we haven’t already, we will get in touch with you to offer you accomodation here first.
+                The setting for our wedding will be at this venue, which is based right next to the town of Lalinde, the heart of town only a 10 minute walk away.
+                Though we’d love to have you all here, there is only enough accomodation on site for the wedding party, and if we haven’t already, we will get in touch with you to offer you accomodation here first.
             </p>
+            <div className='padding-vertical-2' />
             <div id='magnolias'>
                 <img src={lesmagnolias} />
                 <p>
@@ -34,7 +35,7 @@ const venue = () => {
                 <strong>Bergerac</strong> - the largest town nearby with lots of accommodation choices and only a 30 minute drive away.
             </p>
             <p>
-                <strong>Le Bugue</strong> - a small attractive market town on the Vezere River, new Limeuil, which is near our church. 30 mins drive away.
+                <strong>Le Bugue</strong> - a small attractive market town on the Vezere River near Limeuil, which is near our church. 30 mins drive away.
             </p>
             <p>
                 <strong>Limueil</strong> - once classified as "One of the Most Beautiful Villages of France", this is the town where we'll get married. 20 mins drive away.

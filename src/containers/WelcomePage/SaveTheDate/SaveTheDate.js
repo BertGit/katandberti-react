@@ -23,6 +23,8 @@ let strings = new LocalizedStrings({
 
 class SaveTheDate extends React.PureComponent {
     kbcircle = React.createRef()
+    photocircleLeft = React.createRef()
+    photocircleRight = React.createRef()
 
     render() {
         return (
@@ -35,14 +37,24 @@ class SaveTheDate extends React.PureComponent {
                         <h2 className='white-text-with-shadow'>{strings.gettingMarried}</h2>
                         <div className='padding-vertical-5' />
                         <div id='kb-circle-row'>
-                            <div ref={this.kbcircle} id='kb-circle'>
-                                <span> Kat<br />&<br />Berti </span>
+                            {/* <a href='#'> */}
+                            <div ref={this.photocircleLeft} id='about-us-circle' className='kb-circle photo-circle'>
+                                {/* <div className='circle-overlay'>
+                                        <span className='circle-content'>MORE ABOUT US</span>
+                                    </div> */}
+                            </div>
+                            {/* </a> */}
+                            <div ref={this.kbcircle} id='date-circle' className='kb-circle'>
+                                <span className='circle-content'> Kat<br />&<br />Berti </span>
                                 <div className='padding-vertical-2' />
                                 <span> {strings.date} </span>
                             </div>
+                            <div ref={this.photocircleRight} id='champagne-circle' className='kb-circle photo-circle' />
                         </div>
                         <Waypoint onEnter={() => {
                             this.kbcircle.current.style.boxShadow = '0 0 0 15px rgba(255,200,73,0.5)'
+                            this.photocircleLeft.current.style.transform = 'translateX(0)'
+                            window.setTimeout(() => this.photocircleRight.current.style.transform = 'translateX(0)', 500)
                         }} />
                         <div className='padding-vertical-5' />
                     </div>

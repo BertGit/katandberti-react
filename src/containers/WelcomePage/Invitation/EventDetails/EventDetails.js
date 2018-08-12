@@ -14,7 +14,7 @@ import ornament from '../../../../assets/images/ornament.png'
 
 class EventDetails extends React.Component {
     state = {
-        selectedLink: 2
+        selectedLink: 0
     }
 
     switchContent(link) {
