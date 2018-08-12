@@ -56,9 +56,9 @@
 }
 #champagne-circle {
     background-image: url('/img/champagne.jpg');
-    background-size: 400px;
+    background-size: 420px;
     background-repeat: no-repeat;
-    background-position-x: -80px;
+    background-position-x: -95px;
 }
 
 .circle-overlay {
