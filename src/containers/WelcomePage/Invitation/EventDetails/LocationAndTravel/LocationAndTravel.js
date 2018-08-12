@@ -1,5 +1,10 @@
 import React from 'react'
 
+import GoogleMapReact from 'google-map-react';
+
+import './LocationAndTravel.css'
+import secrets from '../../../../../assets/secrets.json'
+
 const location = () => {
     return (
         <div>
@@ -34,6 +39,21 @@ const location = () => {
             <p>
                 If you fly into Bergerac, you can get to the town or accomodation nearby easily by taxi, but having a car will make it easier to do more things in the area during your whole stay. If you fly to Bordeaux then we do recommend hiring a car.
             </p>
+            <div id='map-location'>
+                <GoogleMapReact
+                    bootstrapURLKeys={{ key: secrets.mapsApiKey }}
+                    defaultCenter={{ lat: 44.8370098, lng: 0.7052953 }}
+                    defaultZoom={11}
+                    onGoogleApiLoaded={({ map, maps }) => {
+                        new maps.Marker({
+                            position: { lat: 44.8370098, lng: 0.7452953 },
+                            map,
+                            title: 'Les Magnolias'
+                        })
+                    }}
+                >
+                </GoogleMapReact>
+            </div>
         </div>
     )
 }

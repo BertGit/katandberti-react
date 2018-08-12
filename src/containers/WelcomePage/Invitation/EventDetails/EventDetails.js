@@ -2,6 +2,7 @@ import React from 'react'
 import TabLink from './TabLink/TabLink'
 import LocationAndTravel from './LocationAndTravel/LocationAndTravel'
 import VenueAndAccommodation from './VenueAndAccommodation/VenueAndAccommodation'
+import TheDay from './TheDay/TheDay'
 import LocalizedStrings from 'react-localization'
 
 import './EventDetails.css'
@@ -13,7 +14,7 @@ import ornament from '../../../../assets/images/ornament.png'
 
 class EventDetails extends React.Component {
     state = {
-        selectedLink: 0
+        selectedLink: 2
     }
 
     switchContent(link) {
@@ -27,6 +28,7 @@ class EventDetails extends React.Component {
             switch (this.state.selectedLink) {
                 case 0: return <LocationAndTravel />
                 case 1: return <VenueAndAccommodation />
+                case 2: return <TheDay />
             }
         })()
         return (

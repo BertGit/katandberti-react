@@ -1,0 +1,47 @@
+#the-day {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#the-day .content{
+    position: relative;
+}
+
+#the-details #the-day h1 {
+    border-bottom: none;
+}
+
+#the-day em {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#food-pics > img {
+    position: absolute;
+}
+
+#food-pics .macarons {
+    width: 10%;
+    min-width: 70px;
+    left: 5%;
+    top: 20%;
+}
+#food-pics .flutes {
+    width: 10%;
+    min-width: 70px;
+    right: 5%;
+    top: 30%;
+}
+#food-pics .croissant {
+    left: 7%;
+    min-width: 70px;
+    bottom: 35%;
+    width: 10%;
+}
+#food-pics .baguette {
+    min-width: 100px;
+    width: 15%;
+    right: 0%;
+    bottom: 20%;
+}

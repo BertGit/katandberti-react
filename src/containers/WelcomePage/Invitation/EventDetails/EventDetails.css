@@ -2,6 +2,12 @@
     text-align: left;
 }
 
+@media(min-width: 768px) {
+    #the-details .content {
+        width: 60%;
+    }
+}
+
 #the-details h1 {
     justify-content: center;
     text-align: center;
