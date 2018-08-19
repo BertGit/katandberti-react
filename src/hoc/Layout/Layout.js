@@ -4,7 +4,8 @@ import { configureAnchors } from 'react-scrollable-anchor'
 import Aux from '../Aux/Aux'
 import Toolbar from '../../components/Toolbar/Toolbar'
 import WelcomePage from '../../containers/WelcomePage/WelcomePage'
-import { Route } from 'react-router-dom'
+import OurStory from '../../containers/OurStory/OurStory'
+import { Route, Switch } from 'react-router-dom'
 
 class Layout extends React.Component {
     state = {
@@ -19,8 +20,11 @@ class Layout extends React.Component {
     render() {
         return (
             <Aux>
-                <Route path='/' exact render={() => this.renderLayout(null)} />
-                <Route path='/:userId' render={(props) => this.renderLayout(props.match.params.userId)} />
+                <Switch>
+                    <Route path='/' exact render={() => this.renderLayout(null)} />
+                    <Route path='/our-story' render={() => this.renderOurStory()} />
+                    <Route path='/:userId' render={(props) => this.renderLayout(props.match.params.userId)} />
+                </Switch>
             </Aux>
         )
     }
@@ -33,6 +37,14 @@ class Layout extends React.Component {
                     <WelcomePage toolbarHeight={this.state.toolbarHeight} userId={userId} />
                 </main>
             </Aux>
+        )
+    }
+
+    renderOurStory = () => {
+        return (
+            <main>
+                <OurStory />
+            </main>
         )
     }
 }

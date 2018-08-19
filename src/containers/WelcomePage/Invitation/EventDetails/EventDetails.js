@@ -1,5 +1,5 @@
 import React from 'react'
-import TabLink from './TabLink/TabLink'
+import TabLink from '../../../../components/TabLink/TabLink'
 import LocationAndTravel from './LocationAndTravel/LocationAndTravel'
 import VenueAndAccommodation from './VenueAndAccommodation/VenueAndAccommodation'
 import TheDay from './TheDay/TheDay'
