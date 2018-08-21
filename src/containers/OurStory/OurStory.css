@@ -41,3 +41,35 @@
     justify-content: space-between;
     align-items: flex-start;
 }
+
+.story-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.slick-next:before, .slick-prev:before {
+    color: black;
+}
+
+.slick-slide {
+    transition: all 500ms ease;
+    padding: 10px;
+}
+
+@media(min-width: 768px) {
+    .slick-center {
+        transform: scale(1.5);
+    }
+}
+
+@media(min-width: 768px) {
+    .slick-list {
+        margin-bottom: 10px;
+    }
+    .slick-track {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}

@@ -5,6 +5,7 @@ import LocalizedStrings from 'react-localization'
 import Aux from '../../../hoc/Aux/Aux'
 
 import Waypoint from 'react-waypoint'
+import { Link } from 'react-router-dom'
 import '../../../css/Container.css'
 import '../../../css/Spacers.css'
 import './SaveTheDate.css'
@@ -38,11 +39,13 @@ class SaveTheDate extends React.PureComponent {
                         <div className='padding-vertical-5' />
                         <div id='kb-circle-row'>
                             {/* <a href='#'> */}
-                            <div ref={this.photocircleLeft} id='about-us-circle' className='kb-circle photo-circle'>
-                                {/* <div className='circle-overlay'>
+                            <Link to='/our-story'>
+                                <div ref={this.photocircleLeft} id='about-us-circle' className='kb-circle photo-circle'>
+                                    <div className='circle-overlay'>
                                         <span className='circle-content'>MORE ABOUT US</span>
-                                    </div> */}
-                            </div>
+                                    </div>
+                                </div>
+                            </Link>
                             {/* </a> */}
                             <div ref={this.kbcircle} id='date-circle' className='kb-circle'>
                                 <span className='circle-content'> Kat<br />&<br />Berti </span>
