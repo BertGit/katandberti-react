@@ -40,6 +40,9 @@ const venue = () => {
             <p>
                 <strong>Limueil</strong> - once classified as "One of the Most Beautiful Villages of France", this is the town where we'll get married. 20 mins drive away.
             </p>
+            <p>
+                <strong>Issigeac</strong> - A wonderful medieval village, just a 20 minute drive south.
+            </p>
             <h2>Some hotels within a 30 minute drive</h2>
             <p>
                 Hôtel-Restaurant Côté Rivage - 3*Hotel<br />
