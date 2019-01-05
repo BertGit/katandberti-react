@@ -6,6 +6,7 @@ import Toolbar from '../../components/Toolbar/Toolbar'
 import WelcomePage from '../../containers/WelcomePage/WelcomePage'
 import OurStory from '../../containers/OurStory/OurStory'
 import { Route, Switch } from 'react-router-dom'
+import Rsvp from '../../containers/Rsvp/Rsvp';
 
 class Layout extends React.Component {
     state = {
@@ -23,6 +24,7 @@ class Layout extends React.Component {
                 <Switch>
                     <Route path='/' exact render={() => this.renderLayout(null)} />
                     <Route path='/our-story' render={() => this.renderOurStory()} />
+                    <Route path='/rsvp/:userId' render={(props) => this.renderLayoutRsvp(props.match.params.userId)} />
                     <Route path='/:userId' render={(props) => this.renderLayout(props.match.params.userId)} />
                 </Switch>
             </Aux>
@@ -35,6 +37,16 @@ class Layout extends React.Component {
                 <Toolbar toolbarRendered={this.toolbarSizeChange} showRsvp={!!userId} />
                 <main>
                     <WelcomePage toolbarHeight={this.state.toolbarHeight} userId={userId} />
+                </main>
+            </Aux>
+        )
+    }
+    renderLayoutRsvp = (userId) => {
+        return (
+            <Aux>
+                <Toolbar toolbarRendered={this.toolbarSizeChange} showRsvp={!!userId} />
+                <main>
+                    <Rsvp toolbarHeight={this.state.toolbarHeight} userId={userId} />
                 </main>
             </Aux>
         )

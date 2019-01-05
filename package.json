@@ -12,6 +12,7 @@
     "react-localization": "^1.0.10",
     "react-media": "^1.8.0",
     "react-motion": "^0.5.2",
+    "react-resize-detector": "^3.2.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",

@@ -1,6 +1,8 @@
 import React from 'react'
 
 import LocalizedStrings from 'react-localization'
+import ReactResizeDetector from 'react-resize-detector';
+import Aux from '../../hoc/Aux/Aux'
 
 import './Toolbar.css'
 import '../../css/Buttons.css'
@@ -15,21 +17,19 @@ let strings = new LocalizedStrings({
 })
 
 class Toolbar extends React.PureComponent {
-
-    toolbarRef = React.createRef();
-
-    componentDidMount = () => {
-        this.props.toolbarRendered(this.toolbarRef.current.clientHeight)
-    }
-
     render() {
         return (
-            <nav ref={this.toolbarRef} id='toolbar' >
-                <img src={logo} className='logo' alt='' />
-                <a href='#a-event-details'>
-                    <button className='btn btn-dark btn-rsvp'>{strings.rsvp}</button>
-                </a>
-            </nav>
+            <Aux>
+                <nav id='toolbar' >
+                    <div id='toolbar-inner'>
+                        <img src={logo} className='logo' alt='' />
+                        <a href='/#a-event-details'>
+                            <button className='btn btn-dark btn-rsvp'>{strings.rsvp}</button>
+                        </a>
+                    </div>
+                </nav>
+                <ReactResizeDetector resizableElementId="toolbar" handleWidht handleHeight onResize={(_, height) => this.props.toolbarRendered(height)} />
+            </Aux>
         )
     }
 }
