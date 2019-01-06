@@ -19,80 +19,113 @@
 
 #final-rsvp .card {
     display: flex;
+}
+
+.page-wrapper {
+    display: flex;
+    position: relative;
+    font-size: 14px;
     perspective: 200vh;
 }
 
-#final-rsvp .card .page {
-    display: flex;
-    font-size: 14px;
+.page-wrapper:first-child {
+    z-index: 100;
+}
+
+#final-rsvp .card .page{
+    position: relative;
     width: 500px;
     background-image: url('/img/paper.png');
     background-repeat: repeat;
+
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    transform-origin: 100% 0%;
+}
+
+.page-wrapper.flipped .page {
+    transform: rotateY(180deg);
+}
+
+#final-rsvp .card .page::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
     box-shadow: 0 5px 10px 0px rgba(0,0,0,0.5);
 }
 
 .page1 {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0) 90%, rgba(47, 47, 47, 0.12));
+    position: relative;
+    z-index: 100;
 }
 
-.page1-inner{
+.page2 {
+    position: relative;
+    z-index: 1;
+}
+
+.page1-back {
+    position:absolute;
+    transform: rotateY(180deg) translateZ(1px);
+    backface-visibility: hidden;
+}
+
+.page1-front{
+    position:absolute;
     width: 100%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0) 90%, rgba(47, 47, 47, 0.12));
+    backface-visibility: hidden;
+    transform:  translateZ(1px);
+}
+
+.page1-frame {
     display: flex;
     flex-flow: column;
     margin: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
     border: 1.5px solid #fdc655;
 }
 
-.page1-inner .invited {
+.page1-front .invited {
     margin-top: 4rem;
 }
-.page1-inner .katandberti {
+.page1-front .katandberti {
     display: flex;
     flex-flow: column;
     margin-top: 2rem;
     font-size: 20px;
     letter-spacing: 1.1px;
 }
-.page1-inner .katandberti .ampersand{
+.page1-front .katandberti .ampersand{
     font-family: 'Amatic SC';
     font-size: 48px;
 }
 
-.page1-inner .timeandplace {
+.page1-front .timeandplace {
     margin-top: 2rem;
     line-height: 1.5;
 }
 
-.page1-inner .rings img {
+.page1-front .rings img {
     width: 43px;
     margin: 2rem;
 }
 
-.page1-inner .agenda {
+.page1-front .agenda {
     display: flex;
     flex-flow: column;
 }
 
-.page1-inner .footer {
+.page1-front .footer {
     display: flex;
     flex-flow: column;
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
 
-.page1 {
-    transition: transform 2s;
-    transform-origin: 100% 0%;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-}
-
-.page1.flipped {
-    transform: rotateY(180deg);
-}
-
 .page2 {
-    width: 100%;
     padding-top: 3rem;
     display: flex;
     flex-flow: column;
@@ -165,6 +198,7 @@
 
 .page2 button {
     margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 .page2 select {

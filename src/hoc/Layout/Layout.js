@@ -44,10 +44,10 @@ class Layout extends React.Component {
     renderLayoutRsvp = (userId) => {
         return (
             <Aux>
-                <Toolbar toolbarRendered={this.toolbarSizeChange} showRsvp={!!userId} />
-                <main>
-                    <Rsvp toolbarHeight={this.state.toolbarHeight} userId={userId} />
-                </main>
+                {/* <Toolbar toolbarRendered={this.toolbarSizeChange} showRsvp={!!userId} /> */}
+                {/* <main> */}
+                <Rsvp toolbarHeight={this.state.toolbarHeight} userId={userId} />
+                {/* </main> */}
             </Aux>
         )
     }
