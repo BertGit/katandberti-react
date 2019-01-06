@@ -62,3 +62,18 @@ button {
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
 }
+
+.btn-outline {
+    color: #212529;
+    background-color: transparent;
+    border: 1px solid #212529;
+}
+
+.btn-outline:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.btn-outline:focus, .btn-outline.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
+}

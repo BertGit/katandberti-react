@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: url('/img/dordogne.jpg');
+    background-image: url('/img/countryside.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -17,7 +17,185 @@
     }
 }
 
-#guest-name {
-    font-family: 'Amatic SC', cursive;
-    font-size: 5rem;
+#final-rsvp .card {
+    display: flex;
+    perspective: 200vh;
+}
+
+#final-rsvp .card .page {
+    display: flex;
+    font-size: 14px;
+    width: 500px;
+    background-image: url('/img/paper.png');
+    background-repeat: repeat;
+    box-shadow: 0 5px 10px 0px rgba(0,0,0,0.5);
+}
+
+.page1 {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0) 90%, rgba(47, 47, 47, 0.12));
+}
+
+.page1-inner{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    margin: 20px;
+    border: 1.5px solid #fdc655;
+}
+
+.page1-inner .invited {
+    margin-top: 4rem;
+}
+.page1-inner .katandberti {
+    display: flex;
+    flex-flow: column;
+    margin-top: 2rem;
+    font-size: 20px;
+    letter-spacing: 1.1px;
+}
+.page1-inner .katandberti .ampersand{
+    font-family: 'Amatic SC';
+    font-size: 48px;
+}
+
+.page1-inner .timeandplace {
+    margin-top: 2rem;
+    line-height: 1.5;
+}
+
+.page1-inner .rings img {
+    width: 43px;
+    margin: 2rem;
+}
+
+.page1-inner .agenda {
+    display: flex;
+    flex-flow: column;
+}
+
+.page1-inner .footer {
+    display: flex;
+    flex-flow: column;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.page1 {
+    transition: transform 2s;
+    transform-origin: 100% 0%;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.page1.flipped {
+    transform: rotateY(180deg);
+}
+
+.page2 {
+    width: 100%;
+    padding-top: 3rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-image: linear-gradient(to left, rgba(223, 223, 223, 0), rgba(227, 227, 227, 0) 92%, rgba(108, 108, 108, 0.06));
+}
+
+.page2 h1 {
+    font-size: 20px;
+}
+
+.page2 h2 {
+    display: flex;
+    font-size: 14px;
+    border-bottom: 1px solid #fdc655;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.page2 input {
+    text-align: center;
+    background: none;
+    border: 1px solid #97979740;
+    background-color: #D8D8D830;
+    width: 80%;
+    height: 20px;
+    border-radius: 3px;
+    padding: 1rem;
+    font-size: inherit;
+    font-weight: normal;
+    font-family: 'Maven Pro', sans-serif;
+    outline: none;
+    transition: all 400ms ease-in-out;
+}
+
+.page2 input::placeholder { 
+    color: rgb(133, 133, 133); 
+}
+
+.page2 .attendance {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.page2 .attendance .numberSelector {
+    margin-top: 0.8rem;
+}
+
+.page2 .disco {
+    margin: 1rem;
+}
+
+.page2 .diet {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page2 .diet h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.page2 .diet input {
+    margin:  0.5rem 0;
+}
+
+.page2 button {
+    margin-top: 1rem;
+}
+
+.page2 select {
+    margin-left: 1rem;
+    color: #3c3b3b;
+    height: 35px;
+    padding: 5px 20px 5px 5px;
+    font-size: inherit;
+    border: 1px solid #97979740;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 400ms ease-in-out;
+    background: url('/img/triangle.png') 80% 15px  no-repeat #D8D8D830;
+  }
+  
+.page2 select:focus, input:focus { 
+    box-shadow: 0 0 2px 1px #fdc655;
+}
+  
+/* CAUTION: IE hackery ahead */
+.page2 select::-ms-expand { 
+    display: none; /* remove default arrow in IE 10 and 11 */
+}
+
+/* target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+    .page2 select {
+        background:none\9;
+        padding: 5px\9;
+    }
 }
