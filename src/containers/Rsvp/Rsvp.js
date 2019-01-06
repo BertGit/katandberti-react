@@ -11,6 +11,7 @@ import disco from '../../assets/images/disco.png'
 import logo from '../../assets/images/logoKB.png'
 import NumberSelector from './NumberSelector/NumberSelector';
 import Aux from '../../hoc/Aux/Aux'
+import { runInThisContext } from 'vm';
 
 let defaultRsvp = {
     selection: "accepted",
@@ -24,7 +25,7 @@ class Rsvp extends React.Component {
     state = {
         validUser: true,
         userNames: null,
-        flipState: true,
+        flipState: false,
         rsvp: defaultRsvp
     }
 
@@ -46,9 +47,6 @@ class Rsvp extends React.Component {
                 }
             })
         }
-        // setInterval(() => {
-        //     this.setState({ flipState: !this.state.flipState })
-        // }, 5000)
     }
 
     render() {
@@ -119,7 +117,7 @@ class Rsvp extends React.Component {
                                         <label>Anything else we need to know about?</label>
                                         <input placeholder="Allergies, etc." value={this.state.rsvp.otherInfo} onChange={this.changeOtherInfo} />
                                     </div>
-                                    <button className="btn btn-dark">Send my RSVP</button>
+                                    <button className="btn btn-dark" onClick={this.sendRsvp}>Send my RSVP</button>
                                 </div>
                             </div>
                         </div>
@@ -173,6 +171,21 @@ class Rsvp extends React.Component {
                 ...this.state.rsvp,
                 otherInfo: inputElement.target.value
             }
+        })
+    }
+
+    sendRsvp = () => {
+        let rsvp = this.state.rsvp
+        if (rsvp.names.trim() === "") {
+            alert("Please fill in your name/s")
+            return
+        }
+        if (rsvp.selection === "accepted" && rsvp.numAttending === 0) {
+            alert("Please tell us how many of you will be attending")
+            return
+        }
+        this.setState({
+            flipState: true
         })
     }
 }
