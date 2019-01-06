@@ -8,6 +8,7 @@ import "./Rsvp.css"
 import '../../css/Spacers.css'
 import rings from '../../assets/images/rings.png'
 import disco from '../../assets/images/disco.png'
+import logo from '../../assets/images/logoKB.png'
 import NumberSelector from './NumberSelector/NumberSelector';
 import Aux from '../../hoc/Aux/Aux'
 
@@ -23,7 +24,7 @@ class Rsvp extends React.Component {
     state = {
         validUser: true,
         userNames: null,
-        flipState: false,
+        flipState: true,
         rsvp: defaultRsvp
     }
 
@@ -55,7 +56,7 @@ class Rsvp extends React.Component {
             return (
                 <Aux>
                     <div id='final-rsvp'>
-                        <div className="card">
+                        <div className={"card " + (this.state.flipState ? "flipped" : "")} >
                             <div className={"page-wrapper " + (this.state.flipState ? "flipped" : "")} >
                                 <div className="page page1">
                                     <div className="page1-front">
@@ -82,37 +83,48 @@ class Rsvp extends React.Component {
                                         </div>
                                     </div>
                                     <div className="page1-back">
-                                        <div>Thank you my dear e=frasjdalfd ahsdkfa sld faklsdjhf lkahsd lf</div>
+                                        <div>
+                                            <h1>Thanks!</h1>
+                                            We have received your response
+                                            <img src={logo} />
+                                        </div>
+                                        <div className="eventInfo">
+                                            Find all the information you'll need for the event here
+                                            <a href='/#a-event-details'>
+                                                <button className="btn btn-outline">EVENT DETAILS</button>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="page-wrapper">
                                 <div className="page page2" >
                                     <h1>RSVP</h1>
-                                    <h2>PLEASE REPLY BY 31ST JAN 2019</h2>
-                                    <input placeholder="Enter name/s here" value={this.state.rsvp.names} onChange={this.changeNames} />
-                                    <div className="attendance">
-                                        <RadioButton selected={this.state.rsvp.selection === "accepted"} label="Will attend with pleasure" clicked={() => this.willAttend(true)} />
-                                        <RadioButton selected={this.state.rsvp.selection === "declined"} label="Must decline with regret" clicked={() => this.willAttend(false)} />
-                                        <NumberSelector label="Total number attending" value={this.state.rsvp.numAttending} numberChanged={this.numAttendingChanged} />
-                                    </div>
+                                    <h2>PLEASE REPLY BY 1ST MARCH 2019</h2>
                                     <div className="disco">
                                         <img src={disco} alt='' />
                                     </div>
                                     <div className="joinus">
                                         Join us for our ceremony, dinner, drinks and dance
                                     </div>
+                                    <input placeholder="Enter name/s here" value={this.state.rsvp.names} onChange={this.changeNames} />
+                                    <div className="attendance">
+                                        <RadioButton selected={this.state.rsvp.selection === "accepted"} label="Will attend with pleasure" clicked={() => this.willAttend(true)} />
+                                        <RadioButton selected={this.state.rsvp.selection === "declined"} label="Must decline with regret" clicked={() => this.willAttend(false)} />
+                                        <NumberSelector label="Total number attending" value={this.state.rsvp.numAttending} numberChanged={this.numAttendingChanged} />
+                                    </div>
                                     <div className="diet">
                                         <h2>DIETARY REQUIREMENTS</h2>
                                         <NumberSelector label="How many vegetarians are in your party?" value={this.state.rsvp.numVegetarians} numberChanged={this.numVegetariansChanged} />
+                                        <label>Anything else we need to know about?</label>
                                         <input placeholder="Allergies, etc." value={this.state.rsvp.otherInfo} onChange={this.changeOtherInfo} />
                                     </div>
-                                    <button className="btn btn-outline">SEND MY RSVP</button>
+                                    <button className="btn btn-dark">Send my RSVP</button>
                                 </div>
                             </div>
                         </div>
                     </div >
-                </Aux>
+                </Aux >
             )
         } else {
             return <Redirect to='/' />
