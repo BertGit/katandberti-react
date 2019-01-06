@@ -19,7 +19,7 @@
 
 #final-rsvp .card {
     display: flex;
-    transition: transform 2s;
+    transition: transform 1.5s ease-in-out;
 }
 #final-rsvp .card.flipped {
     transform: translateX(-25%);
@@ -42,7 +42,7 @@
     background-image: url('/img/paper.png');
     background-repeat: repeat;
 
-    transition: transform 2s;
+    transition: transform 1.5s ease-in-out;
     transform-style: preserve-3d;
     transform-origin: 100% 0%;
 }
