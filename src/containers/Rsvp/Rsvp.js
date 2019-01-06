@@ -34,11 +34,10 @@ class Rsvp extends React.Component {
             const guestsRef = firebase.database().ref('guests/' + this.props.userId)
             guestsRef.once('value', (data) => {
                 if (data.val()) {
-                    console.log('Received data from server', data.val())
                     firebase.database().ref('guests/' + this.props.userId + '/finalRsvp/visited').set("TRUE")
                     this.setState({
                         userNames: data.val().names,
-                        rsvp: { ...data.val().finalRsvp, ...defaultRsvp }
+                        rsvp: { ...defaultRsvp, ...data.val().finalRsvp }
                     })
                 } else {
                     this.setState({
@@ -76,7 +75,7 @@ class Rsvp extends React.Component {
                                                 <span>15.00 Wedding Reception - Les Magnolias, Lalinde</span>
                                             </div>
                                             <div className="footer">
-                                                <a href='/#a-event-details'>More details</a>
+                                                <a href='/#a-event-details' target="_blank">More details</a>
                                             </div>
                                         </div>
                                     </div>
@@ -115,7 +114,7 @@ class Rsvp extends React.Component {
                                         <h2>DIETARY REQUIREMENTS</h2>
                                         <NumberSelector label="How many vegetarians are in your party?" value={this.state.rsvp.numVegetarians} numberChanged={this.numVegetariansChanged} />
                                         <label>Anything else we need to know about?</label>
-                                        <input placeholder="Allergies, etc." value={this.state.rsvp.otherInfo} onChange={this.changeOtherInfo} />
+                                        <input placeholder="Allergies, comments, etc." value={this.state.rsvp.otherInfo} onChange={this.changeOtherInfo} />
                                     </div>
                                     <button className="btn btn-dark" onClick={this.sendRsvp}>Send my RSVP</button>
                                 </div>
@@ -133,7 +132,9 @@ class Rsvp extends React.Component {
         this.setState({
             rsvp: {
                 ...this.state.rsvp,
-                selection: yesno ? "accepted" : "declined"
+                selection: yesno ? "accepted" : "declined",
+                numAttending: yesno === false ? 0 : this.state.rsvp.numAttending,
+                numVegetarians: yesno === false ? 0 : this.state.rsvp.numVegetarians
             }
         })
     }
@@ -148,21 +149,25 @@ class Rsvp extends React.Component {
     }
 
     numAttendingChanged = (numAttending) => {
-        this.setState({
-            rsvp: {
-                ...this.state.rsvp,
-                numAttending
-            }
-        })
+        if (this.state.rsvp.selection === "accepted") {
+            this.setState({
+                rsvp: {
+                    ...this.state.rsvp,
+                    numAttending
+                }
+            })
+        }
     }
 
     numVegetariansChanged = (numVegetarians) => {
-        this.setState({
-            rsvp: {
-                ...this.state.rsvp,
-                numVegetarians
-            }
-        })
+        if (this.state.rsvp.selection === "accepted") {
+            this.setState({
+                rsvp: {
+                    ...this.state.rsvp,
+                    numVegetarians
+                }
+            })
+        }
     }
 
     changeOtherInfo = (inputElement) => {
@@ -184,9 +189,9 @@ class Rsvp extends React.Component {
             alert("Please tell us how many of you will be attending")
             return
         }
-        this.setState({
-            flipState: true
-        })
+        firebase.database().ref('guests/' + this.props.userId + '/finalRsvp').set(
+            rsvp
+        ).then(this.setState({ flipState: true }))
     }
 }
 
