@@ -7,7 +7,7 @@ body {
   color: default-color;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   body {
     padding-top: 3rem;
   }

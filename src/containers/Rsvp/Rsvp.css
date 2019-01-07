@@ -11,7 +11,7 @@
     min-height: calc(100vh - 4rem);
 }
 
-@media(max-width: 768px) {
+@media(max-width: 1200px) {
     #final-rsvp {
         min-height: calc(100vh - 3rem);
     }
