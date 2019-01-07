@@ -71,8 +71,12 @@ class Rsvp extends React.Component {
                                                 <img src={rings} alt='' />
                                             </div>
                                             <div className="agenda">
-                                                <span>13.30 Ceremony - St Catherine’s Church, Limueil</span>
-                                                <span>15.00 Wedding Reception - Les Magnolias, Lalinde</span>
+                                                <div className="line">
+                                                    <span>13.30 Ceremony&nbsp;</span><span>- St Catherine’s Church, Limueil</span>
+                                                </div>
+                                                <div className="line">
+                                                    <span>15.00 Wedding Reception&nbsp;</span><span>- Les Magnolias, Lalinde</span>
+                                                </div>
                                             </div>
                                             <div className="footer">
                                                 <a href='/#a-event-details' target="_blank">More details</a>

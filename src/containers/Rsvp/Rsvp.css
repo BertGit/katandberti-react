@@ -20,6 +20,7 @@
 #final-rsvp .card {
     display: flex;
     transition: transform 1.5s ease-in-out;
+    margin: 2rem 1rem;
 }
 #final-rsvp .card.flipped {
     transform: translateX(-25%);
@@ -36,7 +37,7 @@
     z-index: 100;
 }
 
-#final-rsvp .card .page{
+#final-rsvp .card .page {
     position: relative;
     width: 500px;
     background-image: url('/img/paper.png');
@@ -66,6 +67,7 @@
 
 .page2 {
     position: relative;
+    padding: 1rem;
     z-index: 1;
 }
 
@@ -117,6 +119,7 @@
     display: flex;
     flex-flow: column;
     margin: 20px;
+    padding: 1rem;
     width: calc(100% - 40px);
     height: calc(100% - 40px);
     border: 1.5px solid #fdc655;
@@ -150,6 +153,13 @@
 .page1-front .agenda {
     display: flex;
     flex-flow: column;
+}
+
+.page1-front .agenda .line {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.3rem;
 }
 
 .page1-front .footer {
@@ -283,5 +293,42 @@
     .page2 select {
         background:none\9;
         padding: 5px\9;
+    }
+}
+
+@media(max-width: 992px) {
+    .page1-front, page2::before {
+        background-image: none;
+    }
+    .page1-front {
+        position: relative;
+    }
+    .page::before {
+        display: none;
+    }
+    .page1-frame {
+        margin: 10px;
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+    }
+    #final-rsvp .card {
+        flex-direction: column;
+        box-shadow: 0 5px 10px 0px rgba(0,0,0,0.5);
+    }
+    #final-rsvp .card .page {
+        width: 100%;
+        max-width: 500px;
+    }
+    .page1-front .invited {
+        margin-top: 1rem;
+    }
+    .page1-front .footer {
+        margin-bottom: 1.5rem;
+    }
+    .page2 {
+        padding-top: 1rem;
+    }
+    .page2 button {
+        margin-bottom: 1rem;
     }
 }
