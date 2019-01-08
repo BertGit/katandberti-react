@@ -81,6 +81,7 @@
     top: 0;
     right: 0;
     bottom: 0;
+    padding: 1rem;
     transform: rotateY(180deg) translateZ(1px);
     backface-visibility: hidden;
 }
@@ -330,5 +331,25 @@
     }
     .page2 button {
         margin-bottom: 1rem;
+    }
+    /*flippy*/
+    #final-rsvp .card.flipped {
+        transform: none;
+    }
+
+    .card.flipped .page-wrapper .page2 {
+        display: none;
+    }
+
+    .card.flipped .page1 {
+        max-height: 80vh;
+    }
+
+    #final-rsvp .card .page {
+        transition: none;
+    }
+    #final-rsvp .card .page {
+        transition: none;
+        transform-origin: 50% 0%;
     }
 }
