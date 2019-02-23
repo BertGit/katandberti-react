@@ -4,7 +4,7 @@
     justify-content: center;
 }
 
-#the-day .content{
+#the-day .content {
     position: relative;
 }
 
@@ -17,7 +17,7 @@
     margin-bottom: 0.5rem;
 }
 
-#food-pics > img {
+#food-pics>img {
     position: absolute;
 }
 
@@ -25,20 +25,23 @@
     width: 10%;
     min-width: 70px;
     left: 5%;
-    top: 20%;
+    top: 0;
 }
+
 #food-pics .flutes {
     width: 10%;
     min-width: 70px;
     right: 5%;
-    top: 30%;
+    top: 20%;
 }
+
 #food-pics .croissant {
     left: 7%;
     min-width: 70px;
-    bottom: 35%;
+    bottom: 45%;
     width: 10%;
 }
+
 #food-pics .baguette {
     min-width: 100px;
     width: 15%;

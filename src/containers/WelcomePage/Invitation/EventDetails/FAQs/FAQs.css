@@ -1,0 +1,44 @@
+.faqs {
+    margin-top: 4rem;
+}
+
+.accordion {
+    position: relative;
+    color: rgb(60, 59, 59);
+    margin-top: 1.5rem;
+    border-bottom: 1px solid black;
+}
+
+.accordion.opened {
+    padding-bottom: 1rem;
+}
+
+.accordion .plusminus {
+    position: absolute;
+    font-size: 40px;
+    font-weight: 100;
+    left: 0;
+    top: 0;
+    transform: translateY(-25%);
+}
+
+.accHeader {
+    cursor: pointer;
+}
+
+.accordion.closed .accHeader {
+    margin-bottom: 1.5rem;
+}
+
+.accordion.closed .accHeader {
+    margin-bottom: 1.5rem;
+}
+
+.accordion h3 {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.accordion h3, .accordion p {
+    padding-left: 3rem;
+}

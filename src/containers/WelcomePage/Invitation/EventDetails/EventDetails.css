@@ -24,18 +24,22 @@
     vertical-align: top;
     margin-top: 0.2rem;
 }
+
 #the-details h1 img {
     display: inline-block;
     width: 4rem;
 }
+
 #the-details h1 img:first-child {
     transform: rotate(50deg);
     margin-right: 2rem;
 }
+
 #the-details h1 img:last-child {
     transform: rotate(-50deg) scaleX(-1);
     margin-left: 2rem;
 }
+
 @media(max-width: 768px) {
     #the-details h1 img {
         display: none;
@@ -62,8 +66,14 @@
     flex-wrap: wrap;
     margin-bottom: 2rem;
 }
+
+.selected-component {
+    position: relative;
+}
+
 @media(max-width: 768px) {
     #the-details #tabs-bar {
         justify-content: left;
+        flex-direction: column;
     }
 }

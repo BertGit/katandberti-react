@@ -3,7 +3,7 @@ import TabLink from '../../../../components/TabLink/TabLink'
 import LocationAndTravel from './LocationAndTravel/LocationAndTravel'
 import VenueAndAccommodation from './VenueAndAccommodation/VenueAndAccommodation'
 import TheDay from './TheDay/TheDay'
-import LocalizedStrings from 'react-localization'
+import FAQs from './FAQs/FAQs'
 
 import './EventDetails.css'
 import '../../../../css/animate.css'
@@ -29,6 +29,7 @@ class EventDetails extends React.Component {
                 case 0: return <LocationAndTravel />
                 case 1: return <VenueAndAccommodation />
                 case 2: return <TheDay />
+                case 3: return <FAQs />
             }
         })()
         return (
@@ -38,8 +39,11 @@ class EventDetails extends React.Component {
                     <TabLink title='Location & Travel' isActive={this.state.selectedLink === 0} clicked={() => this.switchContent(0)} />
                     <TabLink title='The Venue & Accommodation' isActive={this.state.selectedLink === 1} clicked={() => this.switchContent(1)} />
                     <TabLink title='The Day' isActive={this.state.selectedLink === 2} clicked={() => this.switchContent(2)} />
+                    <TabLink title='FAQs' isActive={this.state.selectedLink === 3} clicked={() => this.switchContent(3)} />
                 </div>
-                {selectedComponent}
+                <div className="selected-component">
+                    {selectedComponent}
+                </div>
             </div>
         )
     }
