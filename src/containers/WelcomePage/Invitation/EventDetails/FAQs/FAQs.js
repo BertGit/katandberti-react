@@ -36,13 +36,14 @@ export default class Accordion extends React.PureComponent {
                     </p><p>
                         For those who are renting a car, most of the above will already be covered by the rental agency.
 </p></Aux>)}
-                {this.accordion("How do I get to the church?", <Aux><p>We have organised transport to take our guests to and from the Church. Please be at the Intermarche Lalinde from 12.45pm on Saturday, for a prompt departure of 13.00 hours towards the Church. Parking is available and free of charge here.
+                {this.accordion("How do I get to the church?", <Aux><p>We have organised transport to take our guests to and from the Church. Please be at the Intermarche Lalinde from 12.30pm on Saturday, for a prompt departure of 12.45 hours towards the Church. Parking is available and free of charge here.
 </p><p>
                         For those wishing to drive straight to the Church, please note that there is very little parking available in the tiny village of Limueil. To avoid complications with parking we recommend you take our coach – but you are welcome to make your own way there if you prefer.
 </p></Aux>)}
                 {this.accordion("How will I get back to my accommodation after the party has finished?", <Aux><p>We will be organising a shuttle service to take guests within a maximum of a 30-minute drive back to their accommodations after the party has finished. If you would like to use this service, we kindly ask that guests contribute and bring euros to help towards the cost of this.
 </p><p>All guests with cars can drive to our venue Les Magnolias and park outside the Intermarche which is opposite the venue and has a big car park - this is free parking. If you plan to drive to our venue in the morning and prefer to take a taxi back in the evening after the party, you can leave your car at the Intermarche overnight.
 </p></Aux>)}
+                {this.accordion("What about a wedding gift?", <Aux><p>We are so honoured you will be with us on our wedding day in France. Your efforts to travel and be with us on our special day is our gift, we do not expect more!</p><p>However, we have had some friends and family ask after a wish list, so if you would still like to give us a little something, please enjoy browsing this wish list, where you can contribute to our dream honeymoon! We're lucky to already have a home full of everything we need, so any contributions towards a relaxing holiday will be much appreciated and wisely spent!</p><a href="https://www.honeyfund.co.uk/wedding/KatandBertiGetHitched" target="_blank">https://www.honeyfund.co.uk/wedding/KatandBertiGetHitched</a></Aux>)}
             </div>
         )
     }
